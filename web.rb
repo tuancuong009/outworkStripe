@@ -27,7 +27,7 @@ post '/charge' do
       :currency => "usd",
       :customer => @customer.id,
       :source => source,
-      :description => “Reserve daily”
+      :description => “Reserve_daily”
     )
   rescue Stripe::StripeError => e
     status 402
@@ -140,7 +140,7 @@ post '/stripe-webhook' do
         :currency => source.currency,
         :source => source.id,
         :customer => source.metadata["customer"],
-        :description => "Example Charge"
+        :description => "Reserve_daily"
       )
     rescue Stripe::StripeError => e
       p "Error creating charge: #{e.message}"
